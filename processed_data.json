@@ -1,0 +1,283 @@
+[
+    {
+        "title": "Analysis - Canvas LMS in Course Admin Portal (CAP) ",
+        "jiraId": "NG-6459",
+        "description": "As WileyPLUS Support admin, I want to know the existing functionality in Course Admin Portal (CAP) for supporting existing Canvas LMS users and understand the existing known issues, so that I can plan to have better production support for all the new LMS users like BB, Moodle and D2L.",
+        "comments": [
+            "I am finishing up\u00a0[LMS in Course Admin Portal (CAP). Let me know if you would have time to meet quickly so I can walk though with you. Thank you!;;;",
+            "17/May/19 2:43 PM;jlu2;All the issues found during the analysis are documented in NGPROD and will be discussed with Ryann if they can be either done in near future or to be deferred.\n\nThe confluence page is also updated. [~rvirginia], you can review and add any comment when you get time. :)\u00a0\n\nThank you!;;;",
+            "20/May/19 11:10 AM;rvirginia;We will add new tickets to address the gaps discovered.;;;"
+        ]
+    },
+    {
+        "title": "Cookie Consent - Course admin portal - Enable consent panel",
+        "jiraId": "NG-14918",
+        "description": "The cookie consent script is included in the course admin portal application.",
+        "comments": [
+            "12/Jan/22 10:05 AM;nkochmarev;Consumer-facing apps only;;;"
+        ]
+    },
+    {
+        "title": "To adjust LTI Consumers page in Course Admin Portal",
+        "jiraId": "NG-5582",
+        "description": "# Think about displaying sorting triangle nicely, like adding space bar and maybe making it smaller [^sortingtriangle.png]\u00a0- *DONE*\n # Leave only one LMS type option - *Canvas* - and *pre-selected by default* - the same way as in Export Cartridge [^lmsoptions.png]\u00a0- *DONE*\n # Display error message (to say that lti consumer for this institution exists already) within the same form with input fields, not as the second one screen [^create1.png] , [^create2.png]\nThis will let user to edit his input to fix the issue instead of dropping his input and requesting to repeat from the beginning. Not sure where to display the error message - below Institution field as it was implemented before or at the top of the window (below header)\n # Correct error message above to say \"The lti consumer for this institution is already used. Please choose another one.\" See previous wording [^error.png]\n # Reconsider truncation rules. I'm not able to copy full consumer key [^truncation.png]\n # Shall we add search by FICE - the only one searchable property left? // optional",
+        "comments": [
+            "01/Apr/19 2:22 AM;aziaev;#1 is fixed, used another table component.;;;",
+            "01/Apr/19 2:23 AM;aziaev;#2 is fixed\n!image-2019-04-01-09-23-29-414.png|width=355,height=229!\n\n\u00a0\n\n\u00a0;;;",
+            "01/Apr/19 2:24 AM;aziaev;#3 is fixed\n!image-2019-04-01-09-24-36-095.png|width=399,height=317!;;;",
+            "01/Apr/19 2:50 AM;aziaev;#4 is fixed\n!image-2019-04-01-16-54-14-034.png|width=491,height=399!;;;",
+            "01/Apr/19 2:50 AM;aziaev;#5 is fixed, used resizable table;;;",
+            "01/Apr/19 2:53 AM;aziaev;#6 let's implement this option in future releases;;;"
+        ]
+    },
+    {
+        "title": "Course Admin Portal - allow internal users to enable IA from institution Level",
+        "jiraId": "NG-7393",
+        "description": "As super admin and admin users, I want to enable to enable Inclusive Access (IA) through Course Admin Portal in institution level for LMS users so that the student can access the content without going through shopping cart process.\n\n\u00a0\n\nSuccessful Criteria:\n\nLMS user types include: Wiley Canvas, Canvas, BB, D2L and Moodle.\n\nThe internal users would be Admin or Super Admin for Course Admin Tool (CAP)\n\nWe may want to indicate where to enable the flag in CAP such as Institution level, course level or license level.\u00a0\n\nShall we also include the start date and end date for enable the IA?",
+        "comments": [
+            "22/Sep/20 9:45 AM;jlu2;[~aanthony], this was a story when I created last year. This may be still true after our discussion today. I moved it to meta 2 so eventually we can close out beta epic.;;;",
+            "08/Nov/20 10:39 AM;jlu2;With our current license model, we wont proceed this for now.;;;"
+        ]
+    },
+    {
+        "title": "[TECH DEBT] Optimise performance of table view component in NG Course Admin Portal.",
+        "jiraId": "NG-1677",
+        "description": "Currently, the table view component downloads from backend the whole NG user list or NG course list, etc. depending on the specific view selected in NG Course Admin Portal.\nThis results in noticeable delays as table component can't start rendering till whole data is downloaded from server.\nThe proposal is to implement pagination on backend side so that data related to specific page only should be downloaded to the client.",
+        "comments": [
+            "16/Oct/19 8:41 AM;abondar;The old component was decommissioned;;;"
+        ]
+    },
+    {
+        "title": "[CR] CAP - SSO Migration from OKTA to Azure AD DEV",
+        "jiraId": "NG-9226",
+        "description": "As per the prior communication, Wiley is moving away from OKTA in the coming future and accordingly, we have planned to migrate all the applications currently tied up with OKTA for Single Sign-on to Azure Active Directory(Azure AD).\n\nScope: implement this change for Course Admin Portal.",
+        "comments": [
+            "Course Admin Portal is switched from OKTA to Azure in Dev:\n\nhttps://education-dev.wiley.com/wpngadmin/index.html;;;"
+        ]
+    },
+    {
+        "Summary": "Cinnamon Bread:\"XYZ Canvas\" can be removed from LMS User Type",
+        "Issue key": "NGPROD-521",
+        "Description": "GO TO CAP\n\nSelect User and select User Type = LMS\n\nSelect LMS User Type and found \"XYZ Canvas\" is one of the options but it is always returning 0 results.\n\nwe do not need \"XYZ Canvas\" as LMS user type. It can be removed.",
+        "comments": []
+    },
+    {
+        "Summary": "Cinnamon Bread: Canvas LMS user search results would not return anonymous user",
+        "Issue key": "NGPROD-520",
+        "Description": "\u00a0\n\nLogin CAP\n\nSearch User and select User Type = \"LMS\" and LMS Type = \"Canvas\" and filter with email\n\nIt would only return the results for the users with XYZ User Id and External User Id. For\u00a0anonymous users, it would not include. So, there would be a gap for the returned results.",
+        "comments": [
+            " the issue will be deferred for now.;;;"
+        ]
+    },
+    {
+        "Summary": "[CR] CAP - SSO Migration from TacoBell to Azure AD DEV",
+        "Issue key": "NG-9226",
+        "Description": "As per the prior communication, XYZ is moving away from TacoBell in the coming future and accordingly, we have planned to migrate all the applications currently tied up with TacoBell for Single Sign-on to Azure Active Directory(Azure AD).\n\nScope: implement this change for Cinnamon Bread.",
+        "comments": [
+            "23/Mar/20 3:42 AM;smorozov;Cinnamon Bread is switched from TacoBell to Azure in Dev:"
+        ]
+    },
+    {
+        "Summary": "Admin rights and access",
+        "Issue key": "CKLS-10797",
+        "Description": "1) When adding only \"Can create/modify/delete training courses (individually or by batch processing)\" --> The admin cannot access step 3 (training courses) and step 4 (Portal Customization)\n\n2) When extending the above permission with \"Can create/modify/delete sessions\" then the admin is able to access step 3 (training courses) and step 4 (Portal Customization).\n\n3) Even though that admin was not granted the permission of modifying/deleting other admin's LR, he can change the availability of the LR. Cf attachment\n\u00a0",
+        "comments": [
+            "20/Aug/21 8:36 AM;fvaillant;\u00a0for the point 3) : It is normal to be able to access to a LR (interactive learning resource type in the example) even if the admin has not the right to modify/cancel it because it not has been created by him and he doesn't have the right. In this case when the LR is opened the button delete isn't displayed and if the admin clicks on the Edit button, a message will appear to indicate to him that he is not allowed to do this action :\u00a0 !image-2021-08-20-14-31-28-334.png!\n\n\u00a0\n\nYou are right, he still can access to the actions link in blue and so change the availability of a LR. It is the same for all type of LR, so it is done on purpose.\u00a0 It is not a bug.;;;",
+            "20/Aug/21 9:12 AM;fvaillant;1) When adding only \"Can create/modify/delete training courses (individually or by batch processing)\" --> The admin cannot access step 3 (training courses) and step 4 (Portal Customization)\n\n-> It is strange because when I try on my qa instance with an admin with the same limitation, I can access to the step 3 and 4 of a Learning Channel.  !image-2021-08-20-14-58-58-536.png!;;;",
+            "20/Aug/21 9:16 AM;fvaillant;Hello, [~lchamayou], can you explain ? :\n\n1) When adding only \"Can create/modify/delete training courses (individually or by batch processing)\" --> The admin cannot access step 3 (training courses) and step 4 (Portal Customization)\n\nOn the image I see the link, so why the admin can't access to step 3 and 4. Is a message or an error displayed\u00a0 when he clicks on the links?;;;",
+            "23/Aug/21 4:48 AM;lchamayou;Hi [~fvaillant], I have added the video \"No access to menus\" to illustrate what happens. There is no message whatsoever, it just bring you back to the home page.;;;",
+            "23/Aug/21 7:45 AM;fvaillant;Hi, thank you [~lchamayou]\u00a0. I reproduce the problem on my qa instance. The link brings back to the home page because the training page or the portal customization page or not reachable due to a 404 error. The fact to add training, and customize the portal are parts of the design workspace.\u00a0\n So, it should work without the\u00a0needs to select create/modify/delete sessions in the administrate workspace. It seems to be a bug.\n\n\u00a0\n\n!acc\u00e8s false training dans LC.png!;;;",
+            "23/Aug/21 8:29 AM;lchamayou;[~fvaillant]\u00a0Thank you. I guess this task should be modified into 'Bug'.;;;",
+            "24/Aug/21 9:05 AM;apoude;Yes and remove the point #3 from expectations.;;;"
+        ]
+    },
+    {
+        "Summary": "[NGAI] Displaying 'Unpublished' State for the XYZ Course Sections - NG Admin ",
+        "Issue key": "NG-3134",
+        "Description": "This story is about displaying the 'published'/'unpublished' course status for XYZ course sections in the Course Admin interface.\n\nRequirements in scope:\n 1. The course sections related to the unpublished XYZ course should be marked as 'unpublished' in Cinnamon Bread in the detailed view - Course status parameter should be added to handle this.\n\n2.\u00a0The course sections related to the published XYZ course should be marked as 'published' in Cinnamon Bread in the detailed view - Course status parameter should be added to handle this.\n\n3. NG Dashboard, Find course, Canvas behavior should follow the rules specified in\u00a0NG-4768\u00a0and\u00a0NG-4769\n\n4. 'Course status' parameter is not editable",
+        "comments": [
+            "26/Nov/18 7:47 AM;jchai;From quick investigation, I don't see any properties in Courses or Sections APIs that can be used to accomplish this.\n\n-A hacky workaround would be to do the following:-\n # -set instructors/student users \"custom_data\" property to store these course ID's-\n # -in UI, add custom JavaScript to call for the \"custom_data\" field and hide relevant UI elements-\n\n-It would be unreliable because (1) Instructure can update the HTML any time to break our implementation and (2) we might miss places in LMS where courses sections show up.-\n\n-Functionally in Canvas side, are hidden course sections different from deleted course sections? If not, can we try something like: (1) storing the course section details -> (2) deleting course section -> when Admin users want to restore course sections (3) restoring the the course section with our previously stored details?-\n\nFurther analysis done in email chain \"Hiding XYZ course sections from Cinnamon Bread\";;;",
+            "06/Dec/18 9:27 AM;aryzhakov;Ready for spec workshop;;;",
+            "11/Dec/18 10:21 AM;aryzhakov;Updated as per outcome of spec workshop. Ready for TA;;;",
+            "23/Jan/19 9:11 AM;aryzhakov;Updated as per new requirements from Ryann - added 'Course status' parameter to handle Published/Unpublished states;;;",
+            "08/Feb/19 10:35 AM;rdannelly;This has been accepted as completed.\u00a0 Thank you, Soyuz team!;;;"
+        ]
+    },
+    {
+        "Summary": "[NGAI] Add \"send user reset password email\" control in CAP - NG Admin",
+        "Issue key": "NG-4884",
+        "Description": "This story is about sending to user the Reset Password email by a super admin and admins within the Cinnamon Bread.",
+        "comments": [
+            "10/Jun/19 10:42 AM;aryzhakov;Ready for spec workshop;;;",
+            "11/Jun/19 11:07 AM;aryzhakov;Updated as per spec workshop outcome.\n\nReady for TA;;;",
+            "21/Jun/19 10:46 AM;rdannelly;Hi [~aryzhakov], [~abondar], and [~mlepyoshki].\u00a0 [~dlederer] was able to connect with [~rtangri] on this ticket and we need to adjust our approach. XYZ cannot support changing (and therefore knowing) users' passwords within our admin system. It's a legal issue. However, from within the CAP, a super admin/admin user can send out the password reset email to a particular user. That is legal.\u00a0\n\nSo, we need to adjust the scope of this ticket so that a CAP super admin/admin user can send out a password reset email to a user from their user profile page. That way, the user is able to reset their password and XYZ doesn't know their password. FYI [~jlu2]\n\n!image-2019-06-21-10-46-23-744.png|width=760,height=280!;;;",
+            "21/Jun/19 10:46 AM;rdannelly;For now, I'm assigning this to [~abondar] as [~aryzhakov] is out. FYI [~mlepyoshki];;;",
+            "21/Jun/19 11:09 AM;abondar;[~rdannelly], [~dlederer], [~rtangri], [~smorozov]\nIt looks like we need to double check the scope and use case of \"Set Password\" functionality in Admin UI.\nThe functionality allows to set/reset the password for the user who is not able to do it by himself.\nReasons:\n~ user has lost access to his email account;\n~ user is not able to reset the password for some reason.\nIn such critical case, the \"super admin\" (!) is able to help the user and set the password to him.\nPlease note:\n~ that the customer will be notified by default;\n~ the admin is not able to see the user's password. Set new is the only option.\n\nSo I do not see any serious security risk from the password storage perspective.\nWe do not store the customer passwords in the open state and do not allow somebody to see the user's password. \nIt is just an extra functionality which could allow us to help our customers in some emergency cases.\nNote: the similar functionality is available to admins in all our previous solutions (WPE4) as well as in other solutions (Canvas LMS for instance).\n\nAs for simplified proposal: send a Reset Password email - it is already implemented.\nEverybody might access the https://learning-qa.XYZ.com/ngonboard/index.html#/ForgotPassword page and enter the required email address.\n\nCould you please double check the point and confirm the necessity to redesign the proposed solution?;;;",
+            "21/Jun/19 11:19 AM;rtangri;[~abondar] I have to disagree with rationales given above. If user lost his email account they have bigger problem not just us setting his password. By doing this we opening security flaws and giving person access other person data access in platform.\n\nTo me there is no reason to build this because as you have stated the link is available on the website to reset.\n\n\u00a0\n\n\u00a0\n\n\u00a0\n\n\u00a0;;;",
+            "21/Jun/19 11:25 AM;dlederer;Hi [~abondar]\n\nThanks for your comments. While you are correct that we currently take the necessary steps to hide the password in the UI and in the DB, the fact that the XYZ tech support person helping the user knows the password (as they are keying it in) is the issue here. This opens up the question about data integrity (customer could claim that they had all their homework changed/removed by someone at XYZ since they knew my password). The fact that we do that in E4 and other system in XYZ does not make it a viable option.\u00a0\n\nIf the concern is that they really cannot do it by themselves and we need a mechanism to set a password for them, then the solution would have to be to use a temp password that would force them to reset their password when they login with that password we provide them. I am not sure if that helps if they have lost access to their email account.\n\nThanks.\n\nDavid;;;",
+            "21/Jun/19 11:39 AM;abondar;[~rtangri], [~dlederer]\nThank you for the feedback. I see your point but could not agree with your from \"system functionality\" perspective.\nWe will lose some scenarios in the case.\nHere are quick search examples of the same functionality in competitive systems:\n~ Blackboard: https://help.blackboard.com/Collaborate/Ultra/Administrator/Manage_Users#reset-passwords_OTP-4\n~ Canvas: https://alliedhealthcareertraining.com/knowledgebase\netc.\n\nRyann,\nCould you please comment on that?;;;",
+            "21/Jun/19 11:59 AM;rtangri;[~abondar] That doesn't make them right I will prefer more secure system then have this functionality.\n\nThe system which support this will force user to change password after the reset by admins. So if we have to must build this then way to implement this\n * Admins reset password\n * and in abc web properties we force then to reset the password when they login next time;;;",
+            "21/Jun/19 12:13 PM;rdannelly;[~abondar], [~dlederer] and [~rtangri],\n\nTaking a step back to think of the main used case that we're solving for here...the main issue right now is that if/when a user calls tech support (or reaches out to their CSS) and says they can't get into their account, tech support/CSS can't actually assist them--they can just tell them to reset their password and tell them where to go and what to click to reset their password.\u00a0\n\nThis solution is to give our tech support team agency to actually help along the process of resetting a password. If a user starts a conversation with an agent and says they can't get into the platform, that agent just needs to be able to find that user in the Cinnamon Bread and push out the password reset email to that user's email address.\n\nThat will allow Tech Support to actionable support users while staying entirely out of the business of knowing what new password they set.\n\nI would vote against going to the route of adding in the extra step where XYZ sets the password and then the user resets the password. That adds another step in the process that doesn't need to be there.;;;",
+            "21/Jun/19 12:17 PM;abondar;[~rtangri] I see your concern and I like your idea in general.\nEvidently, it will enlarge the complexity of the solution: new flow brunches, new screens....\n\nAt the moment I can see a few options to move forward:\n1. Decline the functionality (close the ticket as \"won't do\").\n2. Decrease the priority and put the item to the backlog for future.\n3. Implement the simplified approach: replace the window with the link to the \"Forgot Password\" page. (Ryann latest proposal).\n4. implement the current story as a first step to the proposal from Rakesh (\"to reset the password when they log in next time\"). New story/flow need to be created and discussed with Open Field team.\n\n;;;",
+            "21/Jun/19 12:22 PM;abondar;[~rdannelly] I see the point.\nOK. I will update the scope of the story by sending \"Reset Password\" email action instead of Reset Password window (option #3 of the list above).;;;",
+            "21/Jun/19 2:31 PM;rdannelly;Thank you [~abondar]. Let's proceed with Option 3 listed above.;;;",
+            "24/Jun/19 4:53 AM;abondar;[~rdannelly] \nI have updated the story according to the latest request (send Reset Password email).\nCould you please review and confirm the new scope including wireframes, BRs and ACs?\n\nThere are two specific points to confirm:\n1) The option will be available to Admin and Super Admin roles in CAP. Is it fine OR we need to extend the option to the \"User\" role also?\n2) Please confirms the text wording of the button and error/success messages.;;;",
+            "24/Jun/19 10:41 AM;rdannelly;Thank you [~abondar]. I've reviewed the updated scope of the ticket and we're good to go. This option should be available to just 'Admin' and 'Super Admin' roles.\u00a0 The text wording of the button and error/success messages are good to use, as well.\u00a0 Thank you!;;;",
+            "26/Jun/19 6:07 AM;abondar;spec workshop is done. The estimation was reduced to 3 SP.;;;",
+            "12/Jul/19 4:54 AM;drodionov;Testing is complete.;;;",
+            "12/Jul/19 11:43 AM;rdannelly;I've completed UAT testing of this functionality. We can consider this story as complete. Thank you team!;;;"
+        ]
+    },
+    {
+        "Summary": "Math-Maple: System changes answer and marks is wrong",
+        "Issue key": "NGPROD-1197",
+        "Description": "Course:SS 17 E4 - Hughes-Hallett, Calculus, 7e BRV\nSalesForce Case #:05642433\nError Reporter:PATTI FRAZER LOCK\nDomain ID:dmn96993\nAssignment ID:asnmt2599314\nQuestion Name:Chapter 11, Section 11.5, Question 027\nQuestion ID:EAT_1517945590269_1_2312585652199632\nChapter:Chapter 11. Differential Equations\nError Description:\nFor some reason, when students put in -0.043 correctly in the answer to this question, WP is switching their answer to the form -.43e-1. And then WP is marking them wrong. This is an error in the problem, and it is driving me and my students crazy. Please fix it! Thank you.\n",
+        "comments": [
+            "16/Apr/20 8:57 AM;rdannelly;Hi [~afomin], we have redirected the WPe4 team to work on a critical project for NWP's backend Cinnamon Bread tool for the next several months. Due to this reallocation of the team's resources, we're not able to take on WPe4 tickets right now unless the tickets are deemed absolutely critical blocker issues by [~lfavors], as any WPe4 tickets we take on will decrease the amount of the Cinnamon Bread project that the team will be able to complete.\u00a0\n\nI'm going to assign this ticket to [~lfavors] for the assessment of criticality, and I'll move it in the WPe4 team's product backlog for now with the understanding that this isn't something they are going to be focusing on.;;;",
+            "28/Apr/20 12:43 PM;rdannelly;I'm moving this ticket to the deferred status. The WPe4 team has been re-allocated to focus on a critical NWP project for the next three months.;;;",
+            "03/May/21 10:34 AM;lfavors;[~rdannelly], closing this issue.\n\nLonn;;;"
+        ]
+    },
+    {
+        "Summary": "CAP UI. Companion Resources option in license table",
+        "Issue key": "EPOI-1978",
+        "Description": "",
+        "comments": [
+            "15/May/24 12:59 PM;atyukavkin;Example API call to enable Instructor resources for specific license:\nHTTP PUT\n{code:java}\nhttps://learning-qa.XYZ.com/abc/api/v1/cap/users/47cc2a37-9ac5-4dd0-9672-4610391aa6ae/apl/licenses/8d188172-5fda-48f9-b7ff-e3f0f7c7845b{code}\nHTTP Body:\n{code:java}\n{\"instructorResources\": true}\n{code};;;",
+            "07/Jun/24 6:37 AM;nkochmarev;Fix version:\n|XYZPLUS-course-admin-portal-ui|*#19\"3.13.65\"*|\n\n[~cdantaka] [~gherath]\u00a0;;;",
+            "24/Jun/24 9:58 AM;cdantaka;Tested and verified in QA env :\n\nCC:[~atyukavkin]\u00a0;;;",
+            "27/Jun/24 12:11 PM;lfishman;[~cdantaka], [~atyukavkin] - Looks good. I only see the enable/disable link showing for Instructor licenses. Able to enable and disable in the table.;;;"
+        ]
+    },
+    {
+        "Summary": "[NGAI] [F6] Create XYZ Instructor Account based on the Student data already stored in Core/NG DB - NG Admin",
+        "Issue key": "NG-4641",
+        "Description": "This story is about creating the XYZ Instructor account from course admin interface based on the data already stored in NG DB or Core.\n\nThe following cases are in scope:\n # Student account exists in Core and NG DB",
+        "comments": [
+            "20/Nov/18 7:28 AM;aryzhakov;Ready for spec workshop;;;",
+            "29/Nov/18 9:11 AM;aryzhakov;Wireframes are updated as per spec workshop. Ready for TA;;;",
+            "05/Dec/18 8:00 AM;aryzhakov;Corrected wireframes.\n\nAdded BR#11 based on the discussion with Sergey;;;",
+            "07/Dec/18 5:27 AM;aryzhakov;Corrected wireframes- added the case when no departments are present for the selected institution;;;",
+            "13/Dec/18 12:17 PM;aziaev;dev test done\u00a0XYZPLUS-course-admin-ui v1.63.3 2018-12-13 19:59:52 +0300 #17e664583f37358186e3eac356000b3b72b0d25f;;;",
+            "14/Dec/18 4:59 AM;aryzhakov;Changed text label for Institution selection drop down on step 3 of the wizard;;;",
+            "14/Dec/18 6:01 AM;aziaev;Text label is fixed;;;",
+            "18/Dec/18 1:50 AM;aryzhakov;Wireframes are updated as per input on the demo session - see\u00a0NG-4861\u00a0for details;;;",
+            "18/Dec/18 2:28 AM;aziaev;Cinnamon Bread is updated\n*XYZPLUS-course-admin-ui v1.63.33 2018-12-18 10:05:58 +0300 #71f9f741c60c3896c7d48960696b0dab724a732d*\nFixed: texts according to PO feedback\nFixed: JWT user role field;;;"
+        ]
+    },
+    {
+        "Summary": "[TECH DEBT] [Security API] Protecting Course API methods by user roles",
+        "Issue key": "NG-8945",
+        "Description": "The work is consider as \"done\" by below successful criteria:\n\n1) Security API for\u00a0Protecting Course API methods by user roles.\u00a0\n\n2) Full regression testing with the existing automation scripts.\u00a0",
+        "comments": [
+            "11/Mar/20 3:24 PM;atyukavkin;Regression scope is the same as for NG-8946\n * User registered in ECore system but not registered in NextGen\n * User registered in both ECore and NextGen\n * Intercom\n * Update course access model to Adoption. (Onboarding / Create Draft Course / Convert to Current Course)\n{code:java}\n@PutMapping(value = \"/courses/{courseKey}/convertToAdoption\"{code}\n * Update or unpair LMS course (Silent pairing of LMS course with LTI links containing product ID, for instance Content Player launch. It should be first LTI launch in this course).\n{code:java}\n@PutMapping(path = \"/lmscourses/{lmsCourseId}/updateProduct\"{code}\n * Create course section enrollment. (Create Student Account / Enroll to existing Course section)\n{code:java}\n@PostMapping(path = \"/coursesections/{courseSectionId}/enroll\"{code}\n * Create new sub account or get existing one. (Course setup - Create new course)\n{code:java}\n@PostMapping(path = \"/{institutionId}/prepareSubAccountId\"{code}\n * Prepare Canvas sub-account id. (Course setup - Create new course)\n{code:java}\n@PostMapping(path = \"/{institutionId}/prepareCanvasSubAccountId\"{code}\n * Create LMS course. (LTI - provision LMS course)\n{code:java}\n@PostMapping(path = \"/institutions/{institutionId}/lmscourses\"{code}\n * Update user's claimed account and generate new activation passCode. (Claim account - Unfinished flow)\n{code:java}\n@PutMapping(value = \"/{userProfileId}/updateClaimedAccount\"{code}\n * Search user by user_profile.id. (Onboarding / Go to Shopping cart)\n{code:java}\n@GetMapping(path = \"/users/{userProfileKey}\"{code}\n * Update access policies. (Not used from UI, can be skipped)\n{code:java}\n@PutMapping(path = \"/coursesections/updateAccessPolicies\"{code}\n * Update access policies data for external course sections. (Not used from UI, can be skipped)\n{code:java}\n@PutMapping(path = \"/coursesections/lms/updateAccessPolicies\"{code}\n * Add course section to existing course. (Not used from UI, can be skipped)\n{code:java}\n@PostMapping(path = \"/institutions/{institutionId}/courses/{courseId}/coursesections\"{code}\n;;;",
+            "12/Mar/20 12:18 PM;atyukavkin;Ready for testing in\nCST version 1.94.7\nSSO version 1.94.7;;;",
+            "12/Mar/20 12:42 PM;jlu2;[~atyukavkin] Thank you for providing the detail.;;;",
+            "18/Mar/20 6:33 AM;nmendis;[~atyukavkin]\n\n2. Update or unpair LMS course (Cinnamon Bread/ LMS Course / change ISBN)\u00a0\n\n- did not have permission to edit ISBN when I logged in from super admin - akiselev / XYZ12345e\u00a0\n\n!image-2020-03-18-16-01-10-772.png|width=173,height=88!\n\n\u00a0\n\n\u00a0;;;",
+            "18/Mar/20 7:20 AM;atyukavkin;Looks like you are trying to change ISBN for XYZ course not LMS. I updated this item in my comment, you will need to initiate first LTI launch in LMS course for Content Player to check this API change. Silent pairing will happen. It is not visible from UI. Content Player should be opened successfully.;;;",
+            "18/Mar/20 7:27 AM;nmendis;[~atyukavkin]\u00a0: Need details on below flows:\u00a0\n\n4. Create new sub account or get existing one. (Course setup - Create new course)\n{code:java}\n@PostMapping(path = \"/{institutionId}/prepareSubAccountId\"{code}\n5. Prepare Canvas sub-account id. (Course setup - Create new course)\n{code:java}\n@PostMapping(path = \"/{institutionId}/prepareCanvasSubAccountId\"{code}\n*--Need a sub-account id and how to create a new one.*\n {color:#0747a6}AT: Open Course Setup Application. Create New Course [https://learning-qa.XYZ.com/abccst/index.html]{color}\n\n{color:#00875a}NM : --Need an existing sub-account id and how to create a new sub account.{color}\n\n{color:#00875a}NM: Per confirmation from Andrey generating a cartridge from CST manually, will cover this flow as well.\u00a0{color}\n \u00a0\n\n7. Update user's claimed account and generate new activation passCode. (Claim account - Unfinished flow)\n{code:java}\n@PutMapping(value = \"/{userProfileId}/updateClaimedAccount\"{code}\n*--Need to know the user flow on how to execute this*\n\nSearch user by user_profile.id. (Onboarding / Go to Shopping cart)\n{code:java}\n@GetMapping(path = \"/users/{userProfileKey}\"{code}\n*--Need to know the user flow on how to execute this*\n {color:#0747a6}AT: Create new Student account / Proceed to Shopping Cart page / Select any option{color}\n {color:#00875a}NM: This is verified now. Thanks{color}\n\n\u00a0;;;",
+            "19/Mar/20 5:01 PM;jlu2;Per confirmation with [~atyukavkin], one more service is needed:\u00a0abc-auth-service\u00a01.94.6;;;",
+            "20/Mar/20 1:16 AM;vsaranga;[~jlu2] hopes this is not due to a new change. Because we have already in the latter part of the testing.\u00a0;;;",
+            "20/Mar/20 6:27 AM;nmendis;*Tested on:* 03/20/2020\n*Status:*\nVerified changes and did a regression test using automated test suite. \nAllure report : [http://devops.XYZ.com/jenkins/job/NG/job/nightly-rerun/139/allure/]\nAutomation-rerun failures were checked manually. Due to reported issues in Core and SC integration some failures could not be checked.\u00a0\n\n*Versions:*\nLTI:\n{\u00a0 \"Component name\": \"abc-lti\",\u00a0 \"Component version\": \"1.94.11.ng9291.2\",\u00a0 \"Build timestamp\": \"20200319-0534\",\u00a0 \"Git commit hash\": \"982a3d7b617ba31f39d795837f1e2b8780ef731b\"}\nCST:\n{ \"Component name\": \"abc-course-setup-app\", \"Component version\": \"1.94.18\", \"Build timestamp\": \" 20200319-1048\", \"Git commit hash\": \"50956996\"}\n\nAuth-service:\n{\"Component name\": \"abc-auth-service\",\"Component version\": \"1.94.6\",\"Build timestamp\": \" 20200311-1541\",\"Git commit hash\": \"9ccf85d6\"};;;",
+            "20/Mar/20 8:12 AM;atyukavkin;Hi [~vsaranga], the abc-auth-service 1.94.6 was in QA since March 11. I just not mentioned it previously.;;;"
+        ]
+    },
+    {
+        "Summary": "XYZ Course Resources - Instructor Header ",
+        "Issue key": "LMS-9549",
+        "Description": "Including initial application setup work.\n\nAs an Instructor launching my course\n I want to view high level details about my course.\n - Product image\u00a0\n - Course name\u00a0\n\nTechnical Tasks:\n * LTI endpoint to launch XYZ Course Resources\n * Create common UI components for layout, typography, themes, loading states for components, links (with image)\n * Responsive design\n * Setup application container + core logic (ie reading JWT for user role)\n * Setup deployment jobs\n * Show course info (include loading placeholder state)\n\nThis story is for development work only. QA tracked in separate story.",
+        "comments": [
+            "27/Jan/20 10:25 AM;jpeterson;Final design link has been added to the Wireframes Section;;;",
+            "28/Jan/20 11:47 AM;rdannelly;Hi\u00a0[~jlu2], I've reviewed the AC/BR and added comments in red.\u00a0 Please review the changes/open questions. Thank you!;;;",
+            "28/Jan/20 11:48 AM;rdannelly;[~jchai] and [~sconnelly3], can you please review the open red item I added at the end of the Acceptance Criteria? Are we currently considering what will happen when an instructor changes their course name through either one of the XYZ instructor tools for standalone courses or through the LMS course title functionality?;;;",
+            "28/Jan/20 12:27 PM;jchai;{quote}{color:#ff0000}OPEN QUESTION: Do we need to add AC to support when an instructor changes the course name?{color}\n * {color:#ff0000}In standalone courses, instructors can change the name of their course in the Instructor Admin Tool (from either directly within their course in the settings section or through the course tile on the My Course List Page). We should be able to reflect those changes to the name.{color}\n * {color:#ff0000}What about if an instructor changes the course name directly through the LMS (applicable for either standalone courses/integrated courses)? Will the Course Dashboard header update with the updated course name?\u00a0{color}{quote}\n\nDepends on where this information comes from (either through an API call or through course JSON). Probably need to ask Sergey or Yury about it. If whatever API/JSON the Course Dashboard relies on has that updated title, then the updated title will show upon page refresh.;;;",
+            "28/Jan/20 12:42 PM;jlu2;[~rdannelly], I have updated the AC with 1, 3 and 4 and Business Rules 1) and 3) . Depending on the discussion with Proton team, if it is part of the returned API, we shall be able to include.;;;",
+            "28/Jan/20 4:16 PM;rdannelly;Thank you [~jlu2] and [~jchai]. I've made a few following changes to the AC based on our previous discussions.\u00a0\n * If a standalone course's name is updated through either the\u00a0*Cinnamon Bread*\u00a0or the\u00a0*Instructor Admin Tool,*\u00a0the updated course name should be reflected on the Course Dashboard when the user refreshes their window.\n ** [~smorozov], [~azagnityko]\u00a0and\u00a0[~ystartsev], can one of you please share the information that the Pride team needs to make sure that this update occurs?\u00a0\n * If a standalone course's name is updated through Canvas's native changing course title settings, then the new name will not be reflected on the Course Dashboard. This matches the behavior in the Cinnamon Bread and the Instructor Admin Tool\n * If an integrated course's name is updated through the LMS's native course title settings, then the new name will not be reflected on the Course Dashboard. This matches the behavior in the Cinnamon Bread and the Instructor Admin Tool.\n\nHi [~julee.peterson],\u00a0\n\nKnowing the above, do you still believe there is value to showing the course name in the header of the course dashboard? There will be instances in which the course dashboard name will not match the current course's name, if the name is updated in one of the bottom two bullets listed above.\n\nWe could entirely remove the course name from the header and just call that section 'Course Dashboard' without a specific course name. What are your thoughts?;;;",
+            "07/Feb/20 5:57 PM;jchai;Closing dev story. Finished coding using simulated API call. Verified on on [DEV env|https://XYZ2.beta.instructure.com/courses/40097] and [QA env (direct launch to UI app)|https://learning-qa.XYZ.com/ng-course-dashboard/index.html#/].\n\nBuild #: #28 nwp-course-dashboard-0.1.4 (cddea)\nDeployed to DEV and QA env already.\n;;;",
+            "10/Feb/20 7:32 AM;rdannelly;Hi [~jlu2] and [~jchai], do we have credentials for me to show the progress on the header in the demo this morning? Thanks!;;;",
+            "10/Feb/20 7:40 AM;jlu2;[~rdannelly], you can access [https://XYZ2.beta.instructure.com/courses/40097]\u00a0(DEV env) and find the XYZPLUS Course Dashboard with [test@XYZ.com|mailto:test@XYZ.com]\u00a0/ XYZ123 for demo. The cover image would not be shown on the DEV for environmental issue. Be aware that we do not have any way to create a new course for course dashboard yet.\u00a0;;;",
+            "10/Feb/20 7:50 AM;rdannelly;Hi [~jlu2], I'm not seeing the Course Dashboard in this course. Can you check?;;;",
+            "10/Feb/20 7:54 AM;jlu2;[~rdannelly] It is above the setting as below. It is not the expected location...\n\n!image-2020-02-10-07-53-24-521.png|width=474,height=267!;;;",
+            "10/Feb/20 7:57 AM;rdannelly;Thank you [~jlu2]....I think I was looking at the course with different credentials. I now see it.;;;",
+            "18/Feb/20 3:53 PM;jhansen;[~jchai] [~rdannelly]\nThe only thing I'm noticing here is that the button should have a 36px height rather than 32px. Other than that, everything is looking solid.;;;",
+            "18/Feb/20 4:27 PM;jchai;[~jacob.hansen] Which button (and is it under mobile, tablet, desktop experience) are you referring to?;;;",
+            "18/Feb/20 4:43 PM;jhansen;[~jchai] Oh sorry\u2014desktop Options button, and any other buttons we're using.;;;",
+            "18/Feb/20 4:56 PM;jchai;I see 32px for Options button height (see screenshot below). What operating system and browser are you using?\n\n!button-height-QA.png|thumbnail! ;;;",
+            "18/Feb/20 5:02 PM;jhansen;[~jchai]\n\n!Screen Shot 2020-02-18 at 4.59.17 PM.png|thumbnail! \n\nRight, we've been using buttons with a 36px height in our designs. If this is something we need to reconsider let me know, but we chose 36px to allow for more hit space.;;;",
+            "18/Feb/20 5:39 PM;jchai;Oh sorry I misunderstood. You're saying it SHOULD be 36px. The button isn't technically part of this story. It was just implemented very roughly along with the mobile eTextbook button. We should save verification of it to that later story for Options button (LMS-9588).;;;"
+        ]
+    },
+    {
+        "Summary": "XYZ Course Resource doesn't work - sporadic issue",
+        "Issue key": "NGPROD-1356",
+        "Description": "The \"XYZ Course Resource\" doesn't appear - please refer to the screenhots atached. The issue is sporadic and reported by several users in serveral courses",
+        "comments": [
+            "08/Jul/20 3:13 PM;jlu2;[~vsundaramu], Could you please look into the production log if we have a lot of this type of errors on production? Because we cannot reproduce the issue but we would want to know how critical issue is in reality.\n\nFYI [~rvirginia], [~rdannelly]\n\n\u00a0;;;",
+            "08/Jul/20 3:33 PM;atyukavkin;There are no logs for such issues. It is happening in user's browser.;;;",
+            "08/Jul/20 3:34 PM;sconnelly3;If error cannot be reproduced, can this issue be closed?;;;",
+            "08/Jul/20 3:39 PM;atyukavkin;No. It is sporadic issue. We need to understand what is a cause of this. It was replicated by many users. It could be Cookie issue or something else. Like you need to login to XYZ Admin portal first and after that to Next Gen course;;;",
+            "08/Jul/20 3:41 PM;rdannelly; I just reproduced it. It seems to be a caching issue, triggered by something. Only once I go into an incognito window or clear my cache does the page load again [~sconnelly3] and [~atyukavkin]. This one should not be viewed as a blocker. This seems to be the same caching issues that XYZ employees run into when going back and forth between our different tools/environments. ;;;",
+            "08/Jul/20 4:03 PM;jlu2;Per meeting with [~rdannelly] and [~rvirginia], the issue seems happening when internal users login and logout in different products or different tools or different environments.\u00a0\n\nSince there is no consistent way to re-produce the issue, we will close the issue for now. If it continues reporting by the users, we will check in the issue again.\n\nFYI [~dlederer], [~mmarler], [~osolovyo];;;",
+            "09/Jul/20 12:42 PM;nkochmarev;[~sconnelly3] We were able to reproduce the issue on QA, but the issue was with course data. UI hangs when it gets any 400's group of HTTP errors. In our case, it was 403. (renamePracticeQuestions function runs even in case of 400 errors because it is not error for axios but valid response). Strange thing that we get 403 in response from cloud front when the course missed.;;;",
+            "09/Jul/20 12:45 PM;jlu2;[~nkochmarev], if you have persistent way to re-produce the issue, can you share the steps in the lower environments?\n\nThank you!\n\n\u00a0;;;",
+            "09/Jul/20 12:56 PM;nkochmarev;[~jlu2]\n\n[https://XYZ2.test.instructure.com/login/canvas]\n\nCourse :  [Test 5-13|https://XYZ2.test.instructure.com/courses/15503]\n\nBut this is known broken course;;;"
+        ]
+    },
+    {
+        "Summary": "Change unique constraint for abc institution table",
+        "Issue key": "NG-6542",
+        "Description": "We discovered that schools from Malaysia that are listed in CORE with \"valid\" FICE's have the same FICE as schools from Canada. This prevents us from entering these records into the abc institution table since we have a constraint for uniqueness on FICE code. What we should have is a constraint of FICE+Country Code so two schools from different countries can use the same FICE Code.\u00a0",
+        "comments": [
+            "21/May/19 4:24 PM;dlederer;[~rdannelly] - we need to understand the feasibility of doing this as without it we are blocked for adding more schools into the CST to support EMEA schools. 3 of the 6 schools requested thus far (all from Malaysia) are not able to be added. If this is not feasible, we will have to come up with an alternative approach to supporting these schools.\u00a0;;;",
+            "22/May/19 4:26 AM;azagnityko;Hi, [~dlederer], [~rdannelly]. I've made some analysis of this issue, and it seems to be totally feasible and shouldn't take a lot of time.;;;",
+            "23/May/19 11:18 AM;rdannelly;Thank you [~azagnityko].\u00a0\n\n[~mlepyoshki], does the Soyuz team have capacity to take this in in the current sprint 75 or should we consider this work for sprint 76?;;;",
+            "24/May/19 4:33 AM;mlepyoshki;Hi [~rdannelly],\n\nArtem is going to take this ticket in Sprint 75.;;;",
+            "24/May/19 7:27 AM;dlederer;Great news!  Thank you everyone. ;;;",
+            "24/May/19 7:56 AM;rdannelly;Thank you [~mlepyoshki] and [~azagnityko]!;;;",
+            "24/May/19 9:28 AM;azagnityko;Repository: XYZPLUS-course-setup. Branch: feature/NG-6542. Revision: 7cc0d578. Replace unique constraint on institution table. Version: 1.75.9.;;;",
+            "30/May/19 9:48 AM;daladinski;Tested with following data on QA\nCOLLEGE OF THE NORTH ATLANTIC - RIDGE ROAD / A00007001 / 124 / CANADA\nUSM PENANG / A00007001 / 458 / MALAYSIA\n\nCST work fine (creating courses and retrieving departments)\nExport Cartridge works fine\nSearches in Cinnamon Bread work fine\nCreating LTI consumers manually through Cinnamon Bread works fine\nContent launch (standalone and 3rd party LMS) works fine\n\n;;;"
+        ]
+    },
+    {
+        "Summary": "[ENABLER] Complete moving LTI Consumers functionality from CST to CAP UI",
+        "Issue key": "NG-5584",
+        "Description": "",
+        "comments": [
+            "27/Mar/19 4:53 AM;daladinski;further testing is stopped till NG-5582 To adjust LTI Consumers page in Cinnamon Bread  is implemented;;;",
+            "04/Apr/19 11:39 AM;daladinski;Confirmed.;;;"
+        ]
+    },
+    {
+        "Summary": "Secure DELETE /abc/api/v1/enrollments API",
+        "Issue key": "NG-13270",
+        "Description": "Proposal to improve the existing logic:\n~ validate the user (requestor) has an instructor enrolment in the particular course.\n\nBusiness rules:\n1.1. The functionality should be available to users registered in the course with the instructor role.\n1.2 Error message for the case if the user has no instructor enrolment in the course: \"You don't have permission to perform this action. You must be enrolled as an instructor in this course.\"",
+        "comments": [
+            "08/Jun/21 8:50 AM;azagnityko;API path DELETE /v1/enrollments was changed to DELETE /v1/secure/enrollments;;;",
+            "10/Jun/21 2:50 AM;azagnityko;This API is part of the \"Instructor Admin Portal\" logic, since instructors should be able to remove enrollments from the course.;;;",
+            "09/Sep/21 5:14 AM;abondar;tasks in the scope:\n~ redesign delete student API contract\n~ adjust UI implementation \n~~ add the new error message\n~ adjust the existing e2e tests;;;",
+            "15/Sep/21 3:31 AM;smorozov;The scope of this task includes creating new API to be used from IAT to remove student:\n\nAPI path\nDELETE /v1/enrollments/sections/\\{sectionKey}/students/\\{userProfileKey}\n\nValidation logic on the backend should check:\n * requestor is enrolled as instructor in at least one section in\u00a0the course (HTTP status 400 is returned if validation fails)\n * user with provided userProfileKey\u00a0is enrolled as student in the given section (HTTP status 404 is returned if validation fails);;;",
+            "21/Sep/21 11:36 AM;azagnityko;API\n{code:java}\nDELETE /v1/enrollments/sections/{sectionKey}/students/{userProfileKey}{code}\nwas implemented;;;"
+        ]
+    },
+    {
+        "Summary": "Timed Assignment - Accommodations - Anonymous User (student) not listed",
+        "Issue key": "NGPROD-1147",
+        "Description": "*SFDC#\u00a005572684*\n\n\u00a0\n\nSchool: University of Wisconsin-Madison\n Instructor: Paul Kimmel\n Instructor email: n/a (send replies only to me,\u00a0[test@XYZ.com|mailto:test@XYZ.com]\n Class URL (abc): NWP Import\n\nIssue: Paul has a Canvas-integrated NWP course. He is using accommodations for a timed exam he has coming up, but one of his students for whom he needs to make those accommodations appears to have registered as anonymous in NWP and is not showing in the accommodations list. Can anything be done to allow him to provide accommodations for her?\n\nThanks\n Dan\n\n\u00a0\n\n*Student:*\n Sonia Mehra\n [skmehra@wisc.edu|mailto:skmehra@wisc.edu]\nh4. Institution:\n\nInstitution name:UNIVERSITY OF WISCONSIN MADISON\n FICE:A00389501\nh4. Product:\n\nProduct name:Weygandt, Managerial Accounting, 8e\n Product UUID:23393f6f-5cc5-4752-bd83-29c8e132f83d\n Product ISBN:EPROF18124\n\n\u00a0",
+        "comments": [
+            "25/Mar/20 3:34 AM;osolovyo;hi [~abondar] - could you please take a look and help to move it forward?\nIt it possible to register the pointed student in NWP so she would be shown in Student List for Timed Assignment Accommodations with her real name (not as anonymous)?;;;",
+            "25/Mar/20 5:14 AM;abondar;[~osolovyo] It seems there is no enough data to reproduce the issue. \n There are six LMS course sections associated with UNIVERSITY OF WISCONSIN MADISON institution in our database:\n [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/7623]\n [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/7622]\n [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/5190]\n [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/5173]\n [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/5185]\n [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/5184]\n There are three anonymous students found in these sections:\n tlcii@uwm.edu - [https://learning.XYZ.com/abcadmin/index.html#/userList/lmsUser/86107]\n angelama@uwm.edu - [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/5185]\n lspitzer@uwm.edu - [https://learning.XYZ.com/abcadmin/index.html#/courseSectionList/lmsSection/5173]\n But none of them is mucched to the requested user: Sonia Mehra\n\nAt the same time we can find the requested\u00a0user [(skmehra@wisc.edu|mailto:skmehra@wisc.edu]) in our database, but there is no any enrolmets to class section in this case:\n[https://learning.XYZ.com/abcadmin/index.html#/userList/XYZUser/429847]\n\nSo we definetelly need more information to proceed with the ticket...;;;",
+            "25/Mar/20 5:33 AM;osolovyo;hi [~mshirley] - it looks like the issue is reported from non-XYZ Canvas. So we cannot reproduce it when acting as a user.\n\nIs it possible to provide a link to the course/assignment and credentials for instructor's account so we could reproduce and investigate the issue?;;;",
+            "25/Mar/20 9:30 AM;mshirley;,[~dknott] can you obtain the information from the instructor that [~osolovyo] is requesting?;;;",
+            "25/Mar/20 10:22 AM;lfavors;[~mshirley], \n\nLets recreate the issue using https://XYZ.instructure.com/login/canvas. this issue should not be specific to one user.;;;",
+            "25/Mar/20 4:24 PM;mshirley;[~osolovyo] [~dknott] is working with the instructor to gather this information.\n\n\u00a0\n\nMeanwhile we created a test course and student, and replicated the issue.\n\nTest Timed Assignment:\n\n[https://XYZ.instructure.com/courses/2518663/assignments/26193777]\n\nLogin ID:\u00a0mjshirley79\n\nAnonymous\n\n\u00a0 !Untitled.png!;;;",
+            "26/Mar/20 8:10 PM;mshirley;[~osolovyo] further reports have come in that this issue may not be limited to Autonomous users.\n\n\u00a0\n\nSFDC#\u00a005583465\u00a0\n\n[https://learn.XYZPLUS.com/courses/42868/assignments/4784331?module_item_id=14870284]\u00a0\n\nInstructor:\u00a0Changhee Lee\n\nInstructor Email:\u00a0[clee6@ramapo.edu|mailto:clee6@ramapo.edu]\n\nStudents tested;\n # \n|[Emily Alcasid |https://learn.XYZPLUS.com/courses/42868/users/551223]|[ealcasid@ramapo.edu|mailto:ealcasid@ramapo.edu]|\n\n # \n|[Greg Engemann|https://learn.XYZPLUS.com/courses/42868/users/549748]|[gengeman@ramapo.edu|mailto:gengeman@ramapo.edu]\u00a0|\n\nAttached video of screen share from the instructors side. Issue replicated for both students.\n\nTested local in Firefox, Chrome, both with cache & coolies cleared and incognito window.\n\n\u00a0\n\nI have suspension that this may be server side response / database lookup issue\n\n\u00a0\n\nOther agents tested with other standalone courses earlier today without issue.\n\n\u00a0\n\nI hate to suggest, but this may be a more urgent issue to resolve given how randomly the function works, and also does not.\n\n\u00a0\n\n[~jwright] confirmed having the same issue with the course noted in this comment.\n\n\u00a0;;;",
+            "27/Mar/20 1:42 AM;dstepkin;[~mshirley] [~jwright] [~lfavors]\nfor this particular canvas course: https://learn.XYZPLUS.com/courses/42868\ni found that abc data and Canvas data *are out of sync*. at least for a \"published / unpublished\" parameter. in our database course listed as PUBLISHED but in canvas it is UNPUBLISHED instead. i didn't check that rigorously for other params, but it looks like that param alone might cause potential issues like that.\n\nso probably unpublishing the course and publishing it back to keep data in sync using one of our tools (*Cinnamon Bread* or *Instructor Admin Tool*) might solve this particular issue.;;;",
+            "01/Apr/20 12:20 PM;mshirley;[~dstepkin] \n\nFrom the Course Admin (Canvas) -\u00a0*_The system is unable to unpublish your course because it contains graded submissions._*\n\nFrom CAP -\u00a0*_Error. Cannot unpublish the course_*;;;",
+            "01/Apr/20 1:08 PM;rdannelly;I'm closing this ticket. Right now, this is expected behavior in the system. The system does not support anonymous users in this capacity. I have created a new feature ticket for us to better support our anonymous users, including this used case. I've linked the new feature ticket to this ticket for reference.;;;",
+            "01/Apr/20 1:20 PM;mshirley;[~rdannelly]\u00a0I understand that you are confirming the functionality was not designed to support accommodation of anonymous users.\n\n*Is there any possible work* *around?*\u00a0The instructor has been waiting for a response. The student likely completed other assignments in the instructors course. The instructor is also an Author of this book... I would hate to exacerbate the instructors frustrations. - What would you suggest at this time?\u00a0*SFDC#\u00a005572684***\n\nStill waiting for appropriate steps to resolve this issue on, [https://learn.XYZPLUS.com/courses/42868], where the user is not anonymous. Previously provided steps did not resolve the issue. Do I need to create another JIRA?\u00a0*SFDC#\u00a005583465*\n\n\u00a0;;;",
+            "02/Apr/20 2:36 PM;rdannelly;Hi [~mshirley], I'm looping in [~snorman] as she can detail if there are any current workarounds we can give this student in WAS.\n\nYou can also tell the instructor/author that we're looking to add in a functionality to support a XYZ employee ending a student's anonymous state and have them claim an account (if a student asks for this) through our CAP admin tool. This will then allow these students to complete the timed assignment.\u00a0 This ticket is\u00a0NG-9479.\n\nThis solution will not be in place for another several months though, so if you need a more urgent workaround, please connect with Stephanie.;;;",
+            "13/Apr/20 9:19 PM;mshirley;[~rdannelly] another instance of this has been reported by [~lwenger]\n\n[https://learn.XYZPLUS.com/courses/43080]\u00a0\n\nBoth Lanie and I have tested with l large number of students in the class to add them to accommodations. It is not working in any browser, 9:pm EST 4/13/2020\n\nI do not believe that all students registered anonymous, if any did how can one tell from CAP?\n\n*SFDC#\u00a005633368*\u00a0;;;",
+            "14/Apr/20 10:19 AM;lfavors;[~mshirley],,\n\nThere is no work around to add accommodations for a user who is listed as anonymous.  The functionality to change a students decision to transition from anonymous is  slotted in a future peace of functionality.  With your additional comment referencing SFDC# 05633368 \n, are you addressing the same issue or are you identifying a new issue?\n\nIf a new issue, please open a new Jira. If the same issue please stop updating this cancelled Jira.\n\nFYI [~tsummers][~sflanigan]\n;;;"
+        ]
+    }
+]
